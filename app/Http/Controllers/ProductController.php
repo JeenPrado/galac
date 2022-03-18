@@ -24,4 +24,14 @@ class ProductController extends Controller
 
         return view('products.product');
     }
+    public function register(){
+        return view('products.register');
+    }
+
+    public function find(){
+        return view('products.find');
+    }
+    public function edit(){
+        return view('products.modify');
+    }
 }

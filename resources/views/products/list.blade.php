@@ -9,6 +9,7 @@
       <th scope="col">Name</th>
       <th scope="col">Description</th>
       <th scope="col">Price</th>
+      <th scope="col">Amount</th>
     </tr>
   </thead>
   <tbody>
@@ -17,20 +18,26 @@
       <td></td>
       <td> </td>
       <td> </td>
-      <td> <a href="{{route('producto')}}"> Ver </a></td>
+      <td> </td>
+      <td> <a href="{{route('producto')}}"> Ver </a> </td>
+      <td><a href="{{route('modificar')}}"> Modificar </a></td>
     </tr>
     <tr>
       <th scope="row">2</th>
       <td></td>
       <td></td>
       <td></td>
+      <td> </td>
       <td> <a href="{{route('producto')}}"> Ver </a></td>
+      <td><a href="{{route('modificar')}}"> Modificar </a></td>
     </tr>
     <tr>
       <th scope="row">3</th>
       <td colspan="2"></td>
       <td></td>
+      <td> </td>
       <td> <a href="{{route('producto')}}"> Ver </a></td>
+      <td><a href="{{route('modificar')}}"> Modificar </a></td>
     </tr>
   </tbody>
 </table>

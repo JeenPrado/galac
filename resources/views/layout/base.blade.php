@@ -15,9 +15,9 @@
        <nav class="nav-bar navbar-expand ">
           <ul class="navbar-nav ">
             <li class="nav-item">  <a href="" class="nav-link link-success"> Inicio</a></li>
-            <li class="nav-item">  <a href="" class="nav-link link-danger">Enlace 1 </a></li>
-            <li class="nav-item">  <a href="" class="nav-link link-warning"> Enlace 2 </a> </li>
-            <li class="nav-item">   <a href="" class="nav-link"> Enlace 3 </a></li>
+            <li class="nav-item"> <a href="{{route('listar')}}" class="nav-link"> Listado de productos </a></li>
+            <li class="nav-item"> <a href="{{route('registrar')}}" class="nav-link"> Registrar Producto </a></li>
+            <li class="nav-item"> <a href="{{route('buscar')}}" class="nav-link"> Buscar Producto </a></li>
           </ul>
         </nav>
     </div>

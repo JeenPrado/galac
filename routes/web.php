@@ -20,6 +20,9 @@ Route::get('/', function () {
 
 Route::name('listar')->get('/list', 'App\Http\Controllers\ProductController@listar');
 Route::name('producto')->get('/product', 'App\Http\Controllers\ProductController@show');
+Route::name('registrar')->get('/register','App\Http\Controllers\ProductController@register');
+Route::name('buscar')->get('/find', 'App\Http\Controllers\ProductController@find');
+Route::name('modificar')->get('/modify', 'App\Http\Controllers\ProductController@edit');
 
 /*Route::get('/inicio', function () {
     return view('layout.inicio');
