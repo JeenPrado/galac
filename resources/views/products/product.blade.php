@@ -12,9 +12,12 @@
 					<div class="card " style="width: 18rem;">
 						<img src="..." class="card-img-top" alt="...">
 						<div class="card-body">
-							<h5 class="card-title">Product name </h5>
-							<p class="card-text">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
-							<a href="#" class="btn btn-primary">Go somewhere</a>
+							<h5 class="card-title"> {{$product->id}}</h5>
+							<p class="card-text">{{$product->name}} is a device.</p>
+							<p class="card-text">{{$product->price}}.</p>
+							<p class="card-text">{{$product->description}}.</p>
+							<a href="{{route('modificar')}}" class="btn btn-warning">Edit</a>
+							<a href="" class="btn btn-danger">Delete</a>
 						</div>
 					</div>
 				</div>
