@@ -4,7 +4,7 @@
 
   <h1  class="text-center">Registro de Producto</h1>
    <div class="container ">
-       <form action=" " class="form-inline form-control">
+       <form action="{{route('store_product')}}" method="POST" class="form-inline form-control">
             <div class="mb-3 form-inline">
                 <label for="Nombre" class="form-label">Name </label>
                 <input type="text"  class="form-control" id="nombre">

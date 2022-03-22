@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
  
+use Illuminate\Http\Request;
 
 use App\Product; // importo el modelo 
 
-use Illuminate\Http\Request;
+use App\Http\Requests\CreateProductRequest; //importo la clase 
+
 
 class ProductController extends Controller
 {
@@ -32,8 +34,25 @@ class ProductController extends Controller
         return view('products.product')->with(['product' => $product]);
         
     }
-    public function register(){
-        return view('products.register');
+    public function create(){
+        return view('products.create');
+    }
+    public function store(CreateProductRequest $request){
+        //dd($request->all()); //con este veo lo que esta recibiendo 
+       // return $request->get('name');
+        $product = new Product;
+
+        
+        $product->cod = $request->get('cod');
+        $product->name = $request->get('name');
+        $product->description = $request->get('type');
+        $product->price = $request->get('price');
+        $product->quantity = $request->get('quantity');
+        $product->save();
+        return redirect()->route('listar');
+
+
+        
     }
 
     public function find(){

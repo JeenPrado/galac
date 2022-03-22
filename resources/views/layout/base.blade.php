@@ -16,7 +16,7 @@
           <ul class="navbar-nav ">
             <li class="nav-item">  <a href="" class="nav-link link-success"> Inicio</a></li>
             <li class="nav-item"> <a href="{{route('listar')}}" class="nav-link"> Listado de productos </a></li>
-            <li class="nav-item"> <a href="{{route('registrar')}}" class="nav-link"> Registrar Producto </a></li>
+            <li class="nav-item"> <a href="{{route('crear')}}" class="nav-link"> Registrar Producto </a></li>
             <li class="nav-item"> <a href="{{route('buscar')}}" class="nav-link"> Buscar Producto </a></li>
           </ul>
         </nav>
