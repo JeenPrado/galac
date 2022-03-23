@@ -21,8 +21,13 @@
       <td> {{$product->description}}</td>
       <td> {{$product->price}}</td>
       <td> {{$product->quantity}} </td>
-      <td><a href="{{ route('producto', ['cod' => $product->id]) }}"> Ver </a> </td>
-      <td><a href="{{route('modificar')}}"> Modificar </a></td>
+      <td><a href="{{ route('producto', ['cod' => $product->id]) }}" class="btn btn-success">  Show </a> </td>
+      <td><a href="{{route('editar', ['id' => $product->id ]) }}" class="btn btn-info"> Edit </a></td>
+      <td><form action="{{ route('eliminar', ['id' => $product->id]) }}" method="POST" >
+        {{ csrf_field() }}
+        {{ method_field('DELETE') }}
+        <button class="btn btn-danger"> Delete</button>
+      </form></td>
     </tr>
     @endforeach
     

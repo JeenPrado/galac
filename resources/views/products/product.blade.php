@@ -1,10 +1,6 @@
 	@extends('layout.base')
 
 	@section('content')
-
-	
-
-	
 		<div class="container text-center p-5 ">
 		<h3>Ruta de producto </h3>
 			<div class="row p-3">
@@ -16,7 +12,7 @@
 							<p class="card-text">{{$product->name}} is a device.</p>
 							<p class="card-text">{{$product->price}}.</p>
 							<p class="card-text">{{$product->description}}.</p>
-							<a href="{{route('modificar')}}" class="btn btn-warning">Edit</a>
+							<a href="{{ route('editar', ['id' => $product->id]) }}" class="btn btn-warning">Edit</a>
 							<a href="" class="btn btn-danger">Delete</a>
 						</div>
 					</div>

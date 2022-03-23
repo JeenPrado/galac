@@ -19,11 +19,15 @@ Route::get('/', function () {
 /*Route::get('/inicio',);*/
 
 Route::name('listar')->get('/list', 'App\Http\Controllers\ProductController@listar');
-Route::name('guardar')->post('/list','App\Http\Controllers\ProductController@store');
 Route::name('crear')->get('/create','App\Http\Controllers\ProductController@create');
+Route::name('guardar')->post('/list','App\Http\Controllers\ProductController@store');
+Route::name('producto')->get('/product/{cod?}', 'App\Http\Controllers\ProductController@show');
+Route::name('editar')->get('/edit/{id}', 'App\Http\Controllers\ProductController@edit');
+Route::name('update_product')->put('/product/{id}','App\Http\Controllers\ProductController@update');
 Route::name('buscar')->get('/find', 'App\Http\Controllers\ProductController@find');
-Route::name('modificar')->get('/modify', 'App\Http\Controllers\ProductController@edit');
-Route::name('producto')->get('/product/{cod}', 'App\Http\Controllers\ProductController@show');
+Route::name('eliminar')->delete('/delete/{id}', 'App\Http\Controllers\ProductController@delete');
+
+
 /*Route::get('/inicio', function () {
     return view('layout.inicio');
 });*/

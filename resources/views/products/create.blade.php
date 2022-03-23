@@ -3,7 +3,7 @@
 @section('content')
 
 @if(count($errors) > 0)
-<div class="alert alert danger "> 
+<div class="alert alertt-danger "> 
     <ul>
         @foreach($errors->all() as $error)
             <li> {{$error}}</li>
@@ -38,10 +38,7 @@
             </div>
             <div class="form-text"> Este es un texto de ayuda agregado con un div y la clase form-text</div>
             
-            <div class=" mb-3 form-check-inline">
-                <label for="ex" class="form-check-label">Exempt </label>
-                <input type="checkbox"  class="form-check-input" id="ex">
-            </div>
+            
             
             <div class=" mb-3">
                 <button type="submit " class="btn btn-success">Register</button>
