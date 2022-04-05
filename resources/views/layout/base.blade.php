@@ -11,7 +11,7 @@
     <title>Mi primer proyecto </title>
   </head>
   <body>
-    <div class="container bg-light mt-3"> 
+    <div class="container-fluid bg-light mt-3"> 
        <nav class="nav-bar navbar-expand ">
           <ul class="navbar-nav ">
             <li class="nav-item">  <a href="" class="nav-link link-success"> Inicio</a></li>
@@ -21,8 +21,9 @@
           </ul>
         </nav>
     </div>
-    <div class="container  mt-3 p-3">
+    <div class="container-fluid mt-3 p-3">
       @include('layout._errors')
+      @include('layout._messages')
         @yield('content')
 
     </div>

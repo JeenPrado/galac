@@ -30,11 +30,12 @@ class ProductController extends Controller
 
     public function result(Request $request){
         //dd($request);
-        $product=Product::where('name',$request->name)->first();
+        $product = Product::where('name', 'like', '%'.$request->name.'%')->get();
+        //$product=Product::where('name',$request->name)->first();
        //dd($product->id);
         
-        return view('products.product')->with(['product' => $product]);
-       // return view('products.list')->with(['products' => $product]);
+      //  return view('products.product')->with(['product' => $product]); //esta la retorno cuando tenia first
+        return view('products.list')->with(['products' => $product]); //esta la retorno con la lista de productos
     }
 
     public function create(){
@@ -51,6 +52,7 @@ class ProductController extends Controller
         $product->price = $request->get('price');
         $product->quantity = $request->get('quantity');
         $product->save();
+        session()->flash('message','Product created');
         return redirect()->route('listar');
   
     }
@@ -81,6 +83,7 @@ class ProductController extends Controller
             $request->only('name','description', 'price')
         );
         //$id = $product->id;
+        session()->flash('message','Product edited');
       return redirect()->route('producto', ['cod' => $product->id]);
 
     }
@@ -89,6 +92,8 @@ class ProductController extends Controller
         $product= Product::find($id);
 
         $product->delete();
+
+        session()->flash('message','Product deleted');
 
         return redirect()->route('listar');
 

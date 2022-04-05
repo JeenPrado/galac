@@ -28,7 +28,7 @@
                 <label for="price" class="form-label">Quantity </label>
                 <input type="text"  class="form-control" name="quantity" id="quantity" value="{{old('quantity')}}">
             </div>
-            <div class="form-text"> Este es un texto de ayuda agregado con un div y la clase form-text</div>
+            <div class="form-text"> Form</div>
             
             
             
