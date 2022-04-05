@@ -2,15 +2,7 @@
 
 @section('content')
 
-@if(count($errors) > 0)
-<div class="alert alertt-danger "> 
-    <ul>
-        @foreach($errors->all() as $error)
-            <li> {{$error}}</li>
-        @endforeach
-    </ul>
-</div>
-@endif
+
 
   <h1  class="text-center">Registro de Producto</h1>
    <div class="container ">

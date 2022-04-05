@@ -26,11 +26,21 @@ class ProductController extends Controller
         //dd($product);
         $product = Product::find($id);
         return view('products.product')->with(['product' => $product]);
-        
     }
+
+    public function result(Request $request){
+        //dd($request);
+        $product=Product::where('name',$request->name)->first();
+       //dd($product->id);
+        
+        return view('products.product')->with(['product' => $product]);
+       // return view('products.list')->with(['products' => $product]);
+    }
+
     public function create(){
         return view('products.create');
     }
+
     public function store(CreateProductRequest $request){
         //dd($request->all()); //con este veo lo que esta recibiendo 
        // return $request->get('name');

@@ -22,6 +22,7 @@
         </nav>
     </div>
     <div class="container  mt-3 p-3">
+      @include('layout._errors')
         @yield('content')
 
     </div>
