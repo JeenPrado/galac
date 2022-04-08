@@ -18,7 +18,11 @@
             </div>
             <div class=" mb-3 form-inline">
                 <label for="price" class="form-label">Price</label>
-                <input type="text"  class="form-control" name="price" id="price" value="{{$product->price}}">
+                <input type="number"  class="form-control" name="price" id="price" value="{{$product->price}}">
+            </div>
+            <div class=" mb-3 form-inline">
+                <label for="price" class="form-label">Quantity </label>
+                <input type="number"  class="form-control" name="quantity" id="quantity" value="{{$product->quantity}}">
             </div>
             <div class="form-text"> Este es un texto de ayuda agregado con un div y la clase form-text</div>               
             <div class=" mb-3">

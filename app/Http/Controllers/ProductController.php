@@ -25,7 +25,12 @@ class ProductController extends Controller
     public function show($id){   
         //dd($product);
         $product = Product::find($id);
+        if ($product==null)
+        {
+            return view('layout._exc');
+        } else {
         return view('products.product')->with(['product' => $product]);
+        }
     }
 
     public function result(Request $request){
@@ -70,8 +75,13 @@ class ProductController extends Controller
     }*/
     public function edit($id){
         $product = Product::find($id);
-
-        return view('products.edit')->with(['product'=>$product]);
+        //dd($product);
+        if ($product==null)
+        {
+            return view('layout._exc');
+        } else {
+            return view('products.edit')->with(['product'=>$product]);
+        }
     }
 //public function update(Product $product, Request $request){
     public function update($id, UpdateProductRequest $request){
@@ -80,7 +90,7 @@ class ProductController extends Controller
         $product = Product:: find($id);
         $product->update(
 
-            $request->only('name','description', 'price')
+            $request->only('name','description', 'price', 'quantity')
         );
         //$id = $product->id;
         session()->flash('message','Product edited');

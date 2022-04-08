@@ -22,11 +22,11 @@
             </div>
             <div class=" mb-3 form-inline">
                 <label for="price" class="form-label">Price </label>
-                <input type="text"  class="form-control" name="price" id="price" value="{{old('price')}}">
+                <input type="number"  class="form-control" name="price" id="price" value="{{old('price')}}">
             </div>
             <div class=" mb-3 form-inline">
                 <label for="price" class="form-label">Quantity </label>
-                <input type="text"  class="form-control" name="quantity" id="quantity" value="{{old('quantity')}}">
+                <input type="number"  class="form-control" name="quantity" id="quantity" value="{{old('quantity')}}">
             </div>
             <div class="form-text"> Form</div>
             
