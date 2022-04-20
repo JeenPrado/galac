@@ -22,15 +22,23 @@
             </div>
             <div class=" mb-3 form-inline">
                 <label for="price" class="form-label">Price </label>
-                <input type="number"  class="form-control" name="price" id="price" value="{{old('price')}}">
+                <input type="text"  class="form-control" name="price" id="price" value="{{old('price')}}">
+            </div>
+            <div class=" mb-3 form-inline">
+                <label for="category" class="form-label">Category </label>
+                <select name="category" id="category">
+                    @foreach ($categories as $category)
+                    
+                    <option value="{{$category->id}}">{{$category->description}}</option>
+                    @endforeach
+                
+                </select>
             </div>
             <div class=" mb-3 form-inline">
                 <label for="price" class="form-label">Quantity </label>
-                <input type="number"  class="form-control" name="quantity" id="quantity" value="{{old('quantity')}}">
+                <input type="text"  class="form-control" name="quantity" id="quantity" value="{{old('quantity')}}">
             </div>
-            <div class="form-text"> Form</div>
-            
-            
+            <div class="form-text"> Form</div>        
             
             <div class=" mb-3">
                 <button type="submit " class="btn btn-success">Register</button>

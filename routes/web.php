@@ -25,7 +25,7 @@ Route::name('producto')->get('/product/{cod}', 'App\Http\Controllers\ProductCont
 Route::name('editar')->get('/edit/{id}', 'App\Http\Controllers\ProductController@edit');
 Route::name('update_product')->put('/product/{id}','App\Http\Controllers\ProductController@update');
 Route::name('buscar')->get('/find', 'App\Http\Controllers\ProductController@find');
-Route::name('mostrar')->post('/show','App\Http\Controllers\ProductController@result');
+Route::name('mostrar')->post('/see','App\Http\Controllers\ProductController@result');
 Route::name('eliminar')->delete('/delete/{id}', 'App\Http\Controllers\ProductController@delete');
 
 

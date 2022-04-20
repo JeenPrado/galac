@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Product; // importo el modelo 
+use App\Models\Category; // importo el modelo 
 
 use App\Http\Requests\CreateProductRequest; //importo la clase 
 use App\Http\Requests\UpdateProductRequest; //importo la clase 
@@ -18,10 +19,12 @@ class ProductController extends Controller
 
     public function listar(){
         $products = Product::all(); //Traigo toda la data a la vista 
-       return view('products.list')->with(['products' => $products]); //le paso todo a la vista con width ;
+      // dd($products);
+        //return view('products.list')->with(['products' => $products]); //le paso todo a la vista con width ;
+        return view('products.list', compact('products'));
         //return view('layout.list');
     }
-
+    
     public function show($id){   
         //dd($product);
         $product = Product::find($id);
@@ -44,18 +47,30 @@ class ProductController extends Controller
     }
 
     public function create(){
-        return view('products.create');
+        $categorias = Category::all();
+        return view('products.create')->with(['categories' => $categorias]);
     }
 
     public function store(CreateProductRequest $request){
         //dd($request->all()); //con este veo lo que esta recibiendo 
        // return $request->get('name');
+       $validated = $request->validate([
+           'cod' => '',
+           'name' => 'size:5',
+           'price' => 'numeric',
+           'quantity' => 'integer',
+           'category' => 'integer'
+        
+       ]
+
+       );
         $product = new Product;  
         $product->cod = $request->get('cod');
         $product->name = $request->get('name');
         $product->description = $request->get('type');
         $product->price = $request->get('price');
         $product->quantity = $request->get('quantity');
+        $product->id_category = $request->get('category');
         $product->save();
         session()->flash('message','Product created');
         return redirect()->route('listar');
