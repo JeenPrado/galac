@@ -108,7 +108,7 @@ class ProductController extends Controller
         $product = Product:: find($id);
         $product->update(
 
-            $request->only('name','description', 'price', 'quantity')
+            $request->only('name','description', 'price', 'quantity', 'category_id')
         );
         //$id = $product->id;
         session()->flash('message','Product edited');

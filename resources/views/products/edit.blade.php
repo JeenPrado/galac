@@ -17,8 +17,8 @@
                 <input type="text"  class="form-control" name="description" value="{{$product->description}}">
             </div>
             <div class=" mb-3 form-inline">
-                <label for="category" class="form-label">Category </label>
-                <select name="category" id="category">
+                <label for="category_id" class="form-label">Category </label>
+                <select name="category_id" id="category_id">
                     @foreach ($categories as $category)
                     
                     <option value="{{$category->id}}">{{$category->description}}</option>
