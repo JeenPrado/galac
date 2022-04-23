@@ -21,7 +21,7 @@
       <td>{{$product->name}}</td>
       <td> {{$product->description}}</td>
       <td> {{$product->price}}</td>
-      <td> {{$product->id_category}} </td>
+      <td> {{$product->category->description}} </td>
       <td> {{$product->quantity}} </td>
       <td><a href="{{ route('producto', ['cod' => $product->id]) }}" class="btn btn-success">  Show </a> </td>
       <td><a href="{{route('editar', ['id' => $product->id ]) }}" class="btn btn-info"> Edit </a></td>

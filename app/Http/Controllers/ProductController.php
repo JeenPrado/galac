@@ -48,6 +48,7 @@ class ProductController extends Controller
 
     public function create(){
         $categorias = Category::all();
+//        dd($categorias);
         return view('products.create')->with(['categories' => $categorias]);
     }
 
@@ -70,7 +71,7 @@ class ProductController extends Controller
         $product->description = $request->get('type');
         $product->price = $request->get('price');
         $product->quantity = $request->get('quantity');
-        $product->id_category = $request->get('category');
+        $product->category_id = $request->get('category');
         $product->save();
         session()->flash('message','Product created');
         return redirect()->route('listar');
