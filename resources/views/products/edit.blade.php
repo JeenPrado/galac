@@ -17,6 +17,16 @@
                 <input type="text"  class="form-control" name="description" value="{{$product->description}}">
             </div>
             <div class=" mb-3 form-inline">
+                <label for="category" class="form-label">Category </label>
+                <select name="category" id="category">
+                    @foreach ($categories as $category)
+                    
+                    <option value="{{$category->id}}">{{$category->description}}</option>
+                    @endforeach
+                
+                </select>
+            </div>
+            <div class=" mb-3 form-inline">
                 <label for="price" class="form-label">Price</label>
                 <input type="number"  class="form-control" name="price" id="price" value="{{$product->price}}">
             </div>

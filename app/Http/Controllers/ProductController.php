@@ -32,7 +32,8 @@ class ProductController extends Controller
         {
             return view('layout._exc');
         } else {
-        return view('products.product')->with(['product' => $product]);
+        //return view('products.product')->with(['product' => $product]);
+        return view('products.product', compact('product'));
         }
     }
 
@@ -91,12 +92,13 @@ class ProductController extends Controller
     }*/
     public function edit($id){
         $product = Product::find($id);
+        $categorias = Category::all();
         //dd($product);
         if ($product==null)
         {
             return view('layout._exc');
         } else {
-            return view('products.edit')->with(['product'=>$product]);
+            return view('products.edit')->with(['product'=>$product,'categories'=>$categorias]);
         }
     }
 //public function update(Product $product, Request $request){

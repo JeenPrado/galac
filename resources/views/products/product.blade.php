@@ -9,9 +9,9 @@
 						<img src="..." class="card-img-top" alt="...">
 						<div class="card-body">
 							<h5 class="card-title"> {{$product->id}}</h5>
-							<p class="card-text">{{$product->name}} is a device.</p>
-							<p class="card-text">{{$product->price}}.</p>
-							<p class="card-text">{{$product->description}}.</p>
+							<p class="card-text">{{$product->name}}.</p>
+							<p class="card-text">{{$product->price}} $.</p>
+							<p class="card-text">{{$product->category->description}}.</p>
 							<p>
 							<a href="{{ route('editar', ['id' => $product->id]) }}" class="btn btn-warning">Edit</a>
 							<form action="{{ route('eliminar', ['id' => $product->id]) }}" method="POST" >
