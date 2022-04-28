@@ -1,4 +1,4 @@
-@extends('layout.base')
+@extends('layouts.app')
 
 @section('content')
 <h1> Holiss </h1> 

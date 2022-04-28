@@ -58,7 +58,7 @@ class ProductController extends Controller
        // return $request->get('name');
        $validated = $request->validate([
            'cod' => '',
-           'name' => 'size:5',
+           'name' => 'string',
            'price' => 'numeric',
            'quantity' => 'integer',
            'category' => 'integer'
